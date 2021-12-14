@@ -36,6 +36,87 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
+app.get('/Fantasy', (req, res) => {
+  
+
+  var mysql = require('mysql')
+  var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'animedb'
+})
+
+connection.connect()
+    
+    connection.query('SELECT * FROM `animek` WHERE `anime_mufaj` LIKE "%Fantasy%"', function (err, rows, fields) {
+       // if (err) throw err;
+      
+      console.log(rows)
+      res.send(rows)
+    })
+    
+    connection.end()
+ 
+ 
+
+  })
+
+
+app.get('/Drama', (req, res) => {
+  
+
+  var mysql = require('mysql')
+  var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'animedb'
+})
+
+connection.connect()
+    
+    connection.query('SELECT * FROM `animek` WHERE `anime_mufaj` LIKE "%Drama%"', function (err, rows, fields) {
+       // if (err) throw err;
+      
+      console.log(rows)
+      res.send(rows)
+    })
+    
+    connection.end()
+ 
+ 
+
+  })
+
+
+
+app.get('/Comedy', (req, res) => {
+  
+
+  var mysql = require('mysql')
+  var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'animedb'
+})
+
+connection.connect()
+    
+    connection.query('SELECT * FROM `animek` WHERE `anime_mufaj` LIKE "%Comedy%"', function (err, rows, fields) {
+       // if (err) throw err;
+      
+      console.log(rows)
+      res.send(rows)
+    })
+    
+    connection.end()
+ 
+ 
+
+  })
+
 app.get('/Action', (req, res) => {
   
 
