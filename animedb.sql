@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2021. Dec 07. 13:55
--- Kiszolgáló verziója: 10.4.6-MariaDB
--- PHP verzió: 7.3.8
+-- Létrehozás ideje: 2021. Dec 14. 13:09
+-- Kiszolgáló verziója: 10.1.34-MariaDB
+-- PHP verzió: 7.2.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -28,7 +28,6 @@ SET time_zone = "+00:00";
 -- Tábla szerkezet ehhez a táblához `animek`
 --
 
-DROP TABLE IF EXISTS `animek`;
 CREATE TABLE `animek` (
   `anime_id` int(11) NOT NULL,
   `anime_nev` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
@@ -51,7 +50,9 @@ INSERT INTO `animek` (`anime_id`, `anime_nev`, `anime_megjdatum`, `anime_mufaj`,
 (7, 'Steins;Gate', '2011-04-06', 'Drama, Sci-Fi, Suspense', 1),
 (8, 'Monster', '2004-04-07', 'Drama, Horror, Mystery, Suspense', 1),
 (9, 'Vinland Saga', '2019-07-08', 'Action, Adventure, Drama', 2),
-(10, 'Great Teacher Onizuka', '1999-06-30', 'Comedy, Drama, Slice of Life', 1);
+(10, 'Great Teacher Onizuka', '1999-06-30', 'Comedy, Drama, Slice of Life', 1),
+(11, 'Cowboy Bebop', '1998-04-03', 'Action, Adventure, Comedy, Drama, Sci-Fi', 1),
+(12, 'Odd Taxi', '2021-04-06', 'Mystery', 1);
 
 --
 -- Indexek a kiírt táblákhoz
@@ -71,7 +72,7 @@ ALTER TABLE `animek`
 -- AUTO_INCREMENT a táblához `animek`
 --
 ALTER TABLE `animek`
-  MODIFY `anime_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `anime_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
