@@ -38,6 +38,32 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
+//-----------------------------------------------------------szavazat felvitel------------------------------------------------------------------------------------------------------------
+
+app.post('/szavazatfelvitel', (req, res) => {
+
+  var mysql = require('mysql')
+  var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'animedb'
+  })
+  
+  connection.connect()
+  
+  connection.query('insert into szavazatok values (null, '+req.body.bevitel1+' )', function (err, rows, fields) {
+    if (err) throw err
+  
+    console.log("Szavazatát rögzítettük!")
+    res.send("Szavazatát rögzítettük!")
+  })
+  
+  connection.end()
+
+})
+
+
 //-----------------------------------------------------------megjelenés szerinti keresés--------------------------------------------------------------------------------------------------
 
 app.get('/ketezer', (req, res) => {
