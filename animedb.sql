@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2021. Dec 14. 13:09
--- Kiszolgáló verziója: 10.1.34-MariaDB
--- PHP verzió: 7.2.8
+-- Létrehozás ideje: 2022. Jan 04. 13:10
+-- Kiszolgáló verziója: 10.4.6-MariaDB
+-- PHP verzió: 7.3.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -54,6 +54,25 @@ INSERT INTO `animek` (`anime_id`, `anime_nev`, `anime_megjdatum`, `anime_mufaj`,
 (11, 'Cowboy Bebop', '1998-04-03', 'Action, Adventure, Comedy, Drama, Sci-Fi', 1),
 (12, 'Odd Taxi', '2021-04-06', 'Mystery', 1);
 
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `szavazatok`
+--
+
+CREATE TABLE `szavazatok` (
+  `szavazat_id` int(11) NOT NULL,
+  `szavazat_animeid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+--
+-- A tábla adatainak kiíratása `szavazatok`
+--
+
+INSERT INTO `szavazatok` (`szavazat_id`, `szavazat_animeid`) VALUES
+(1, 2),
+(2, 3);
+
 --
 -- Indexek a kiírt táblákhoz
 --
@@ -65,6 +84,12 @@ ALTER TABLE `animek`
   ADD PRIMARY KEY (`anime_id`);
 
 --
+-- A tábla indexei `szavazatok`
+--
+ALTER TABLE `szavazatok`
+  ADD PRIMARY KEY (`szavazat_id`);
+
+--
 -- A kiírt táblák AUTO_INCREMENT értéke
 --
 
@@ -73,6 +98,12 @@ ALTER TABLE `animek`
 --
 ALTER TABLE `animek`
   MODIFY `anime_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT a táblához `szavazatok`
+--
+ALTER TABLE `szavazatok`
+  MODIFY `szavazat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
