@@ -5,6 +5,8 @@ const port = 3000
 
 app.use(express.static('kepek'))
 
+app.use(express.json())
+
 app.use(cors())
 //----------------------------------------------------------------------------alap lekérdezés----------------------------------------------------------------------------------------------
 
@@ -52,7 +54,7 @@ app.post('/szavazatfelvitel', (req, res) => {
   
   connection.connect()
   
-  connection.query('insert into szavazatok values (null, '+req.body.bevitel1+' )', function (err, rows, fields) {
+  connection.query('INSERT into szavazatok values (null, '+req.body.bevitel1+' )', function (err, rows, fields) {
     if (err) throw err
   
     console.log("Szavazatát rögzítettük!")
