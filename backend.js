@@ -22,7 +22,7 @@ var connection = mysql.createConnection({
     
     connection.connect()
     
-    connection.query('SELECT * from animek', function (err, rows, fields) {
+    connection.query('SELECT * from animek INNER JOIN leiras ON animek.anime_id=leiras.anime_leiras_id', function (err, rows, fields) {
        
       
       console.log(rows)
