@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: localhost
--- Létrehozás ideje: 2022. Jan 20. 11:09
+-- Létrehozás ideje: 2022. Feb 08. 17:45
 -- Kiszolgáló verziója: 10.4.21-MariaDB
 -- PHP verzió: 7.4.23
 
@@ -121,12 +121,16 @@ INSERT INTO `szavazatok` (`szavazat_id`, `szavazat_animeid`) VALUES
 (8, 1),
 (9, 1),
 (10, 1),
+(12, 1),
+(15, 1),
 (1, 2),
 (7, 2),
 (2, 3),
 (11, 3),
 (3, 4),
-(4, 4);
+(4, 4),
+(13, 9),
+(14, 10);
 
 -- --------------------------------------------------------
 
@@ -228,19 +232,19 @@ ALTER TABLE `user_roles`
 -- AUTO_INCREMENT a táblához `animek`
 --
 ALTER TABLE `animek`
-  MODIFY `anime_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `anime_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT a táblához `leiras`
 --
 ALTER TABLE `leiras`
-  MODIFY `anime_leiras_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `anime_leiras_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT a táblához `szavazatok`
 --
 ALTER TABLE `szavazatok`
-  MODIFY `szavazat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `szavazat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT a táblához `users`
@@ -251,12 +255,6 @@ ALTER TABLE `users`
 --
 -- Megkötések a kiírt táblákhoz
 --
-
---
--- Megkötések a táblához `animek`
---
-ALTER TABLE `animek`
-  ADD CONSTRAINT `animek_ibfk_1` FOREIGN KEY (`anime_id`) REFERENCES `leiras` (`anime_leiras_id`);
 
 --
 -- Megkötések a táblához `roles`
