@@ -1,6 +1,7 @@
 **AnimeApp Backend – Node.js API for Mobile App**
 
-This repository contains the backend API developed for my vocational final exam project. The backend serves a mobile application conceptually similar to MyAnimeList, enabling users to browse, rate, and search anime titles through a RESTful API.
+📱 About
+A mobile app for browsing, searching, and rating anime, developed as part of my professional final exam. Inspired by MyAnimeList, I handled both the frontend and backend development.
 
 📚 Project Context
 - 🎓 Created as part of my professional final examination
@@ -17,3 +18,4 @@ This repository contains the backend API developed for my vocational final exam 
 - Node.js – JavaScript runtime for server-side logic
 - Express – Web framework for routing and handling HTTP requests
 - JSON – Used as the data format for requests and responses
+- REST API
